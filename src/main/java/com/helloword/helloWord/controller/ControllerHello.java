@@ -28,5 +28,8 @@ public class ControllerHello {
         return "Hola bienvenido";
     }
     
- 
+    @GetMapping("/chau")
+    public String chaoUsuario(){
+        return "Chaou usuario hasta pronto.";
+    }
 }
