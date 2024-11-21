@@ -11,7 +11,7 @@ import lombok.Setter;
 @AllArgsConstructor @NoArgsConstructor
 public class Restaurante {
 
-    private long idPlato;
+    private int idPlato;
     private String nombreRestaurante;
     private String direccionRestaurante;
     private String numeroRestaurante;

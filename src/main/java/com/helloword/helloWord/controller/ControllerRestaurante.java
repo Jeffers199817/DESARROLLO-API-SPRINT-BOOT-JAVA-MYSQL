@@ -1,9 +1,7 @@
 package com.helloword.helloWord.controller;
 
 import com.helloword.helloWord.Restaurante;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +14,7 @@ public class ControllerRestaurante {
 
 
     @GetMapping("/platos/{idPlato}")
-    public String traerPlatos(int idPlato) {
+    public String traerPlatos(@PathVariable int idPlato) {
 
         String menu = null;
 
@@ -40,7 +38,10 @@ public class ControllerRestaurante {
 
 
                 break;
+            }else{
+                menu= "No existe ese plato en el menú";
             }
+
 
         }
 
@@ -52,5 +53,4 @@ public class ControllerRestaurante {
 
 
 
-//
 }
