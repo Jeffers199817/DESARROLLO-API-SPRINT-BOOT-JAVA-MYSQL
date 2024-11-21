@@ -7,6 +7,9 @@ package com.helloword.helloWord.controller;
 import com.helloword.helloWord.Cliente;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author JEFFERSON
@@ -99,7 +102,16 @@ public class ControllerHello {
     }
 
     
+//Respuesta para un memtodo get
 
+    @GetMapping("/traer/clientes")
+    @ResponseBody
+    public List<Cliente> traerUsuario(){
+        List<Cliente> listaClientes = new ArrayList<Cliente>();
+        listaClientes.add(new Cliente(1,"Jefferson","Alquinga","Puembo","0962857715"));
+        listaClientes.add(new Cliente(2,"Bernardo" ,"Alquinga","Quito","09625844457"));
+        return listaClientes;
+    }
 
     
 }
