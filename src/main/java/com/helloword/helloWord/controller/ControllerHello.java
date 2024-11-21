@@ -43,4 +43,20 @@ public class ControllerHello {
         
         
     }
+    
+    
+    // Ejercicio 1 
+    
+    @GetMapping("/suma/{numero1}/{numero2}")
+    public String sumarDosNumeros(@PathVariable int numero1, @PathVariable int numero2){ 
+        return  "CALCULADOR DE SUMA  " + " Número 1 = "+ numero1 + " Número 2 = " + numero2  + " La suma total es: " + (numero1 + numero2) ; 
+    }
+    
+
+
+
+    
+
+
+    
 }
