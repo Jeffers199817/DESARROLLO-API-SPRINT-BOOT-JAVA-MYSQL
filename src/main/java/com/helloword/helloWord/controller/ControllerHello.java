@@ -5,6 +5,8 @@
 package com.helloword.helloWord.controller;
 
 import com.helloword.helloWord.Cliente;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -111,6 +113,14 @@ public class ControllerHello {
         listaClientes.add(new Cliente(1,"Jefferson","Alquinga","Puembo","0962857715"));
         listaClientes.add(new Cliente(2,"Bernardo" ,"Alquinga","Quito","09625844457"));
         return listaClientes;
+    }
+
+    //ResponseEntity es una clases especial para respuestas que puede controlar doto la estructura de metodo get
+
+    @GetMapping("/traerResponse")
+    ResponseEntity<String> traerResponse(){
+
+        return new ResponseEntity<>("Su estado es : ", HttpStatus.ACCEPTED);
     }
 
     
