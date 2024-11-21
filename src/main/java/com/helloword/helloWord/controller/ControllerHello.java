@@ -6,6 +6,7 @@ package com.helloword.helloWord.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -24,13 +25,22 @@ public class ControllerHello {
         
     }
     
-    @GetMapping("/hello/{nombre}/{apellido}")
-    public String hellloWord(@PathVariable String nombre , @PathVariable String apellido){
-        return "Hola bienvenido:" + nombre + " " + apellido;
+    @GetMapping("/hello/{nombre}/{apellido}/{edad}/{profesion}")
+    public String hellloWord(@PathVariable String nombre , @PathVariable String apellido, @PathVariable int edad, @PathVariable  String profesion ){
+        return "Hola bienvenido:" + nombre + " " + apellido + '\n' + "Su edad: " + edad 
+                + '\n'+ "Profesión: " + profesion;
     }
     
     @GetMapping("/chau")
     public String chaoUsuario(){
         return "Chaou usuario hasta pronto.";
+    }
+    
+    @GetMapping("/bye")
+    public String byeUsuario(@RequestParam String nombre, @RequestParam int edad, @RequestParam String profesion){
+        
+        return "El nombre es: " + nombre + " Su edad es: " + edad + " Su profesión es : "+ profesion ;
+        
+        
     }
 }
