@@ -76,7 +76,15 @@ public class ControllerHello {
         return respuest;
     }
     
-
+    
+    @GetMapping("/CalculadoraDeGalones")
+    public String calculadora(@RequestParam String nombre, @RequestParam double galones){ 
+            
+        double calculoGaL = (galones * 3.78541);
+        
+        
+        return "Bienvenido " + nombre + " Galones ingresados es: " + galones + " Transformación a litros es: " + calculoGaL + " Lt"; 
+    }
 
 
     
