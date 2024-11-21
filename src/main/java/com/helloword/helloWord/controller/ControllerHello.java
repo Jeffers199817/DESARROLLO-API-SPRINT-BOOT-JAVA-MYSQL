@@ -5,6 +5,7 @@
 package com.helloword.helloWord.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -23,9 +24,9 @@ public class ControllerHello {
         
     }
     
-    @GetMapping("/hello")
-    public String hellloWord(){
-        return "Hola bienvenido";
+    @GetMapping("/hello/{nombre}/{apellido}")
+    public String hellloWord(@PathVariable String nombre , @PathVariable String apellido){
+        return "Hola bienvenido:" + nombre + " " + apellido;
     }
     
     @GetMapping("/chau")
