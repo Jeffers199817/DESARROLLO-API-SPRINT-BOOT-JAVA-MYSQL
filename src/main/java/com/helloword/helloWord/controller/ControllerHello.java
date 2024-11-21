@@ -4,10 +4,8 @@
  */
 package com.helloword.helloWord.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import com.helloword.helloWord.Cliente;
+import org.springframework.web.bind.annotation.*;
 
 /**
  *
@@ -86,6 +84,18 @@ public class ControllerHello {
         return "Bienvenido " + nombre + " Galones ingresados es: " + galones + " Transformación a litros es: " + calculoGaL + " Lt"; 
     }
 
+
+    //Ejercicio 5
+
+    @PostMapping("/crearUsuario")
+
+    public void crearUsuario(@RequestBody Cliente cli){
+
+        System.out.println("El nombre del cliente es:" + cli.getNombre());
+        System.out.println("El apellido del cliente es:" + cli.getApellido());
+        System.out.println("La direccion del cliente es:" + cli.getDireccion());
+        System.out.println("El telefono del cliente es:" + cli.getTelefono());
+    }
 
     
 
