@@ -90,11 +90,12 @@ public class ControllerHello {
     @PostMapping("/crearUsuario")
 
     public void crearUsuario(@RequestBody Cliente cli){
-
+        System.out.println("Cliente creado Exitosamente");
         System.out.println("El nombre del cliente es:" + cli.getNombre());
         System.out.println("El apellido del cliente es:" + cli.getApellido());
         System.out.println("La direccion del cliente es:" + cli.getDireccion());
         System.out.println("El telefono del cliente es:" + cli.getTelefono());
+        System.out.println("Prueba exitosamente"    );
     }
 
     
