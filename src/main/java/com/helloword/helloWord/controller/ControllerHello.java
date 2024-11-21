@@ -52,6 +52,30 @@ public class ControllerHello {
         return  "CALCULADOR DE SUMA  " + " Número 1 = "+ numero1 + " Número 2 = " + numero2  + " La suma total es: " + (numero1 + numero2) ; 
     }
     
+    //Ejercicio 2 
+    
+    @GetMapping("/nutricionista")
+    public String estadoPeso(@RequestParam int peso){
+         String respuesta=null;
+        if(peso >=1 && peso <= 18.5){ 
+            respuesta = " Peso insuficiente";
+        }
+        if(peso>= 18.6 && peso>=24.9){
+            respuesta = " Peso normal";
+        }
+        if(peso>=25.0 && peso>=29.9){ 
+            respuesta= " Sobrepeso";
+            
+        }
+        if(peso>=30){ 
+            respuesta = " Obesidad , Cuidate mucho";
+        }
+        String respuest = "CALCULADORA DE PESO CORPORAL " + "Su peso es: " + peso + " Su diagnostico es: " + respuesta;
+        
+       
+        return respuest;
+    }
+    
 
 
 
