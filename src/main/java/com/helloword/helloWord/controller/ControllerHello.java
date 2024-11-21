@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ControllerHello {
     
-    @GetMapping("/")
+    @GetMapping("/h")
     public String saidHello(){ 
         
         return "Spring Boot es una herramienta para desarorolla APis en Java";
