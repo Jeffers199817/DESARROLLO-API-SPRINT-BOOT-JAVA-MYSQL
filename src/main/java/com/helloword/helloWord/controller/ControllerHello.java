@@ -120,7 +120,7 @@ public class ControllerHello {
     @GetMapping("/traerResponse")
     ResponseEntity<String> traerResponse(){
 
-        return new ResponseEntity<>("Su estado es : ", HttpStatus.ACCEPTED);
+        return new ResponseEntity<>("Su estado es : ", HttpStatus.OK);
     }
 
     
