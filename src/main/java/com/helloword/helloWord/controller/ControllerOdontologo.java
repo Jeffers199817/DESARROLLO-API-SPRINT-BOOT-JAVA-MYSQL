@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,9 +45,26 @@ public class ControllerOdontologo {
         listaPacientes.add(new Paciente(3L, "49663221", "Benjamín", "Goichuk", LocalDate.of(2008,11,25)));
         listaPacientes.add(new Paciente(4L, "50111889", "Gladys", "Andreiszyn", LocalDate.of(2015,9,27)));
         listaPacientes.add(new Paciente(5L, "12000320", "Eduardo", "Malim", LocalDate.of(1958,5,13)));
-        // cro lista para guardar a los menores
+        // creo lista para guardar a los menores
        List<Paciente> listaMenores = new ArrayList<>();
 
+       //Recorro la lista
+
+        for(Paciente pac : listaPacientes) {
+
+            // Creo una variable para almacenar la fecha actual
+
+            LocalDate hoy = LocalDate.now();
+
+            //Calculo periodo entre fecha de nacimiento el paciente y fecha de hoy
+            Period paci_anios = Period.between(pac.getFechaNacimiento(), hoy);
+
+            if (paci_anios.getYears() < 18) {
+                System.out.println("Cantidad de año es: " + paci_anios.getYears() + " El paciente: " + pac.getNombre());
+                listaMenores.add(pac);
+            }
+
+        }
 
 
 
