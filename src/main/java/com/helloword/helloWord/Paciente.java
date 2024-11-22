@@ -3,7 +3,7 @@ package com.helloword.helloWord;
 
 import lombok.*;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @Setter
 @Getter
@@ -11,11 +11,11 @@ import java.util.Date;
 @NoArgsConstructor
 @ToString
 
-public class paciente {
+public class Paciente {
 
-    private int pacienteId;
-    private long pacienteDni;
+    private Long pacienteId;
+    private String pacienteDni;
     private String nombre;
     private String apellido;
-    private Date fechaNacimiento;
+    private LocalDate fechaNacimiento;
 }
