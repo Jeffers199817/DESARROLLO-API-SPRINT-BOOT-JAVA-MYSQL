@@ -19,11 +19,12 @@ public class AlquileresController {
         Propiedad propi = new Propiedad(152365L,"Robusta","Puembo",399.0,2000.0);
 
         PropiedadDTO propiedadDTO = new PropiedadDTO();
-
+        //Datos de la propiedad
         propiedadDTO.setId_propiedad(propi.getId_propiedad());
         propiedadDTO.setTipo(propi.getTipo_propiedad());
         propiedadDTO.setDireccion(propi.getDireccion_propiedad());
         propiedadDTO.setValor_alquiler(propi.getValor_alquiler());
+        //Datos del Inquilino
         propiedadDTO.setNombre_inquilino(inqui.getNombre());
         propiedadDTO.setApellido_inquilino(inqui.getApellido());
 
